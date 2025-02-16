@@ -24,6 +24,18 @@ router.post("/api/users", async (req, res) => {
   }
 });
 
+router.get("/api/get-users", async (req, res) => {
+  try {
+    const users = await User.find();
+    res.status(200).json({ message: "User returns successfully.", users });
+  } catch (error) {
+    console.error("Error fetching users:", error);
+    res
+      .status(500)
+      .json({ message: "Error in retrieving users.", error: error.message });
+  }
+});
+
 router.get("/", (req, res) => {
   try {
     res.send("hello from the server");
