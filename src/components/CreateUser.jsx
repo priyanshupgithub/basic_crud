@@ -8,16 +8,19 @@ const CreateUser = () => {
       <div>
         <form>
           <div className="mb-4 text-start form-group">
-            <label for="first_name">First Name</label>
+            <label htmlFor="first_name">First Name</label>
             <input
               type="text"
               className="form-control"
               id="first_name"
               placeholder="Enter first name"
             />
+            {firstNameError && (
+              <p className="text-red-500 text-sm">Please enter First Name</p>
+            )}
           </div>
           <div className="mb-4 text-start form-group">
-            <label for="last_name">Last Name</label>
+            <label htmlFor="last_name">Last Name</label>
             <input
               type="text"
               className="form-control"
@@ -26,7 +29,7 @@ const CreateUser = () => {
             />
           </div>
           <div className="mb-4 text-start form-group">
-            <label for="age">Age</label>
+            <label htmlFor="age">Age</label>
             <input
               type="number"
               className="form-control"
@@ -35,7 +38,7 @@ const CreateUser = () => {
             />
           </div>
           <div className="mb-4 text-start form-group">
-            <label for="gender">Gender</label>
+            <label htmlFor="gender">Gender</label>
             <select className="form-control form-control-sm">
               <option>select gender</option>
               <option>Male</option>
@@ -44,7 +47,7 @@ const CreateUser = () => {
             </select>
           </div>
           <div className="mb-4 text-start form-group">
-            <label for="phone">Phone</label>
+            <label htmlFor="phone">Phone</label>
             <input
               type="number"
               className="form-control"
@@ -54,7 +57,7 @@ const CreateUser = () => {
           </div>
 
           <div className="mb-4 text-start form-group">
-            <label for="email">
+            <label htmlFor="email">
               Email address
             </label>
             <input
@@ -66,9 +69,10 @@ const CreateUser = () => {
             <small id="emailHelp" className="form-text text-muted">
               We'll never share your email with anyone else.
             </small>
+            {emailError && <p className="text-red-500 text-sm">{emailError}</p>}
           </div>
           <div className="mb-4 text-start form-group">
-            <label for="password">
+            <label htmlFor="password">
               Password
             </label>
             <input
@@ -77,6 +81,9 @@ const CreateUser = () => {
               id="password"
               placeholder="Enter Password"
             />
+            {passwordError && (
+              <p className="text-red-500 text-sm">Please enter Password</p>
+            )}
           </div>
 
           <div className="mb-4 text-start form-check">
@@ -85,7 +92,7 @@ const CreateUser = () => {
               className="form-check-input"
               id="exampleCheck1"
             />
-            <label className="form-check-label" for="exampleCheck1">
+            <label className="form-check-label" htmlFor="exampleCheck1">
               Check me out
             </label>
           </div>

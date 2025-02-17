@@ -149,6 +149,7 @@ const UpdateUser = () => {
             >
               <option value="Male">Male</option>
               <option value="Female">Female</option>
+              <option value="Other">Other</option>
             </select>
 
             <label className="block mb-2">Phone</label>
